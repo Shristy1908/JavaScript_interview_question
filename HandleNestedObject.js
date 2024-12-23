@@ -54,3 +54,11 @@ data.cluster.forEach((element) => {
     );
   });
 });
+
+
+obj={
+    name:"Shristy",
+    age:24
+}
+
+console.log(Object.entries(obj));
