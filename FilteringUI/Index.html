@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Product Filtering</title>
+</head>
+<body class="bg-gray-800 text-white">
+
+    <!-- navbar code -->
+    <nav class="bg-gray-900 p-4 mb-6">
+        <div class="container max-w-6xl flex flex-col sm:flex-row gap-8 items-center ">
+            <div class="relative w-full ">
+                <input type="text" id="search" placeholder="Search Products..." class="bg-gray-700 rounded-full p-2 pl-10 transition focus:w-full"/>
+            </div>
+
+            <button class="relative" id="cartBtn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 800 800" xml:space="preserve">
+        <path fill="#BFC6E4"
+            d="M630.798 130.167a4.258 4.258 0 0 1 4.253 4.255v92.044H505.775v-96.299h125.023zM279.11 72.611a3.638 3.638 0 0 1 3.634-3.633h200.748a3.638 3.638 0 0 1 3.634 3.633V226.465H279.11V72.611z" />
+        <path fill="#787EBB"
+            d="m675.457 456.83-.169.817c-4.093 25.569-6.17 25.835-14.803 26.518l-415.798 23.29c-4.543-.074-9.234-2.338-11.042-5.883l-.81-3.967v-.092l-48.123-235.681c-.109-3.759-.801-7.561-1.475-11.246-.291-1.621-.674-3.709-.902-5.471h534.16c5.364 0 9.789 4.112 10.286 9.35L675.457 456.83z" />
+        <path fill="#1D1751"
+            d="M716.495 226.465h-62.794v-92.044c0-12.631-10.272-22.905-22.903-22.905H505.775V72.611c0-12.287-9.994-22.283-22.284-22.283H282.744c-12.289 0-22.284 9.997-22.284 22.283v153.854h-81.781c-.437 0-.768.107-1.18.133l-6.417-31.43c-1.167-5.715-1.268-14.702-4.066-19.914-6.406-11.928-28.928-16.368-40.67-21.438l-57.521-24.839c-10.904-4.709-20.413 11.354-9.413 16.104a2002499.926 2002499.926 0 0 0 76.733 33.135c2.079.898 9.903 4.787 13.703 5.941-.002.024.005.047.004.071-.289 3.814 1.856 9.093 2.622 12.842l9.176 44.941 4.426 21.675v.104l48.132 235.715a25.083 25.083 0 0 0 1.633 7.906l1.201 5.881L232.2 587.53c.811 3.971 5.101 6.846 8.992 6.846H672.146c12.001 0 12.021-18.65 0-18.65h-423.36l-10.257-50.233c2.062.394 4.195.614 6.385.614h.259l416.463-23.326.209-.016c22.798-1.801 27.438-14.737 31.791-41.753l51.839-204.402v-1.163c.001-15.98-12.998-28.982-28.98-28.982zm-85.697-96.298a4.258 4.258 0 0 1 4.253 4.255v92.044H505.775v-96.299h125.023zM279.11 72.611a3.638 3.638 0 0 1 3.634-3.633h200.748a3.638 3.638 0 0 1 3.634 3.633V226.465H279.11V72.611zM675.457 456.83l-.169.817c-4.093 25.569-6.17 25.835-14.803 26.518l-415.798 23.29c-4.543-.074-9.234-2.338-11.042-5.883l-.81-3.967v-.092l-48.123-235.681c-.109-3.759-.801-7.561-1.475-11.246-.291-1.621-.674-3.709-.902-5.471h534.16c5.364 0 9.789 4.112 10.286 9.35L675.457 456.83z" />
+        <path fill="#1D1751"
+            d="M586.809 322.914H319.063c-12.001 0-12.021 18.65 0 18.65h267.746c12 .001 12.021-18.65 0-18.65zM566.588 411.23H339.283c-12 0-12.021 18.65 0 18.65h227.305c12.002 0 12.021-18.65 0-18.65zM344.13 749.672c30.73 0 55.727-25 55.727-55.727 0-30.727-24.997-55.727-55.727-55.727s-55.727 25-55.727 55.727c0 30.728 24.998 55.727 55.727 55.727zm0-92.804c20.444 0 37.077 16.633 37.077 37.077s-16.633 37.077-37.077 37.077-37.077-16.633-37.077-37.077 16.633-37.077 37.077-37.077zM613.469 693.945c0-30.727-24.997-55.727-55.727-55.727-30.73 0-55.727 25-55.727 55.727 0 30.728 24.997 55.727 55.727 55.727 30.729 0 55.727-24.999 55.727-55.727zm-92.805 0c0-20.444 16.633-37.077 37.077-37.077s37.077 16.633 37.077 37.077-16.633 37.077-37.077 37.077-37.077-16.633-37.077-37.077z" />
+        <circle fill="#83C9EF" cx="344.13" cy="693.945" r="37.077" />
+        <circle transform="rotate(-80.781 557.754 693.937)" fill="#83C9EF" cx="557.741" cy="693.945" r="37.077" />
+    </svg>
+    <small id="cartCount" class="bg-red-800 text-white text-xs w-4 h-4 absolute -top-2 -right-1 rounded-full">0</small>
+            </button>
+        </div>
+    </nav>
+
+    <main class="flex flex-col md:flex-row container mx-auto max-w-6xl">
+
+
+        <!-- Product filter Category -->
+
+        <div class="space-y-4 p-2 w-full md:max-w-[10rem]">
+            <h2 class="text-2xl">Filters</h2>
+            <h2 class="text-xl mb-2">Category</h2>
+            <div id="filter-container" class="text-xl space-y-2">
+                <div>
+                    <input type="checkbox" class="check" id="cameras"/>
+                    <label for="cameras">Cameras</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="check" id="smartphones" />
+                    <label for="smartphones">Smartphones</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="check" id="televisions" />
+                    <label for="televisions">Televisions</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="check" id="games" />
+                    <label for="games">Games</label>
+                </div>
+            </div>
+        </div> 
+
+        <!-- Product wrapper -->
+
+         <div id="product-wrapper" class="w-full max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-6 place-content-center p-4">
+         </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
