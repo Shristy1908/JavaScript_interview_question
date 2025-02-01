@@ -1,5 +1,5 @@
 var s = "shristy";
-var t = "ystirst";
+var t = "ystifgty";
 
 if (s.length != t.length) {
   console.log("Not anagram");
