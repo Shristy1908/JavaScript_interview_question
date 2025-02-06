@@ -1,4 +1,4 @@
-let str="hi i am shristy roy";
+let str="i am shristy roy";
 
 let strArr=str.split(" ") ;
 
